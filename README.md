@@ -11,10 +11,11 @@
 2. Setup start, mining locations, and end screen framework
 
 ### Week 2: 05/08/2022-05/14/2022
-1. Create play functions and difficulty for each mining location
-2. Add art assets to all the screens
-3. Add text and font for title and instructions
+1. Create play functions, events of sprites, and difficulty for each mining location
+2. Add art assets to all screens
+3. Add text and font stylization for title and instructions in html and css
 
 ### Week 3: 05/15/2022-05/21/2022
 1. Debug and test overall code functionality
 2. Include additional features and final touches
+3. Write Artist Statement

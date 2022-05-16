@@ -1,8 +1,15 @@
 var screen = 0;
+let score = 0;
 
 function setup() {
   createCanvas(600, 400);
-  background(220);
+  for (let i = 0; i < 10; i++) {
+    let spr = createSprite(
+      random(width), random(height),
+      random(10, 50), random(10, 50));
+    spr.shapeColor = random(255);
+    spr.onMouseOver = removeAndScore;
+  }
 }
 
 //Switch Statements
@@ -31,14 +38,40 @@ function introScreen() {
 
 function mine1Screen() {
   background (178,255,214)
-  textSize (30)
+  textSize (10)
   text ('1st Mine Location - Easy', height/4, width/2);
+  //Events on Multiple Sprites
+  drawSprites();
+  fill(255);
+  noStroke();
+  textSize(72);
+  textAlign(CENTER, CENTER);
+  if (score < 10) {
+    text(score, width/2, height/2);
+  }
+  else {
+    text("you win!", width/2, height/2);
+  }
 }
 
 function mine2Screen() {
+  push();
   background (219,255,178)
   textSize (30)
   text ('2nd Mine Location - Intermediate', height/7, width/2);
+  //Events on Multiple Sprites
+  drawSprites();
+  fill(255);
+  noStroke();
+  textSize(72);
+  textAlign(CENTER, CENTER);
+  if (score < 15) {
+    text(score, width/2, height/2);
+  }
+  else {
+    text("you win!", width/2, height/2);
+  }
+  pop();
 }
 
 function mine3Screen() {
@@ -85,4 +118,9 @@ function startMine3(){
 
 function startEnd(){
   screen = 5;
+}
+
+function removeAndScore() {
+  score += 1;
+  this.remove();
 }
